@@ -13,7 +13,7 @@
 import re
 import os
 
-SUBTITLE_TIMESTAMP_PATTERN = r"([0-9]|:|.)*-->([0-9]|:|.)*"
+SUBTITLE_TIMESTAMP_PATTERN = r"([0-9]|:|\.)* --> ([0-9]|:|\.)*"
 """Defines the regex pattern for timestamp lines in VTT files."""
 
 FILE_SEARCH_PATTER = r"*.vtt"
@@ -21,8 +21,7 @@ FILE_SEARCH_PATTER = r"*.vtt"
 
 
 class TIMESTAMP:
-    """
-    Holds information about a single timestamp.
+    """Holds information about a single timestamp.
 
     Attributes
     ----------
@@ -89,7 +88,7 @@ class TIMESTAMP:
         if (len(time_parts) > TIMESTAMP._INDEX_HOUR):
             self.hour = int(time_parts[TIMESTAMP._INDEX_HOUR])
 
-
+    
     def __str__(self) -> str:
         """Returns the timestamp in the format HH:MM:SS,sss, whe s is milliseconds"""
         return f"{self.hour:02}:{self.minute:02}:{self.second:02},{self.millisecond:03}"
