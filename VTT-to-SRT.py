@@ -16,7 +16,7 @@ import os
 SUBTITLE_TIMESTAMP_PATTERN = r"([0-9]|:|\.)* --> ([0-9]|:|\.)*"
 """Defines the regex pattern for timestamp lines in VTT files."""
 
-FILE_SEARCH_PATTER = r"*.vtt"
+FILE_SEARCH_PATTER = r".*\.vtt"
 """Defines the file name pattern used to find VTT files."""
 
 
